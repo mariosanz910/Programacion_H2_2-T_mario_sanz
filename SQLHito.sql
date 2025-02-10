@@ -37,5 +37,7 @@ INSERT INTO tareas (id_usuario, titulo, descripcion, estado) VALUES
 (88888888, 'Hacer ejercicio', 'Correr 5 km en el parque', 'pendiente'),
 (77777777, 'Aprender SQL', 'Revisar curso de SQL en línea', 'completada');
 
+-- SELECT id FROM usuarios WHERE id = 77777777 AND contrasena = "clave789";
+
 SELECT * FROM usuarios;
 SELECT * FROM tareas;
