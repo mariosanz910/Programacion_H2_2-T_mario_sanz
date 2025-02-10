@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="card-body">
                 <form method="POST">
-                <div class="mb-3">
+                    <div class="mb-3">
                         <label for="id" class="form-label">DNI <strong>Sin letra</strong></label>
                         <input type="text" class="form-control" id="id" name="id" required maxlength="8" pattern="^\d{8}$" title="DNI sin letra" />
                     </div>

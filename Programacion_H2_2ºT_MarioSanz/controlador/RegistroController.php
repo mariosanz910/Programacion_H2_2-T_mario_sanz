@@ -11,4 +11,7 @@ class UsuariosController {
     public function agregarusuario($id, $nombre_usuario, $correo, $contrasena) {
         $this->Usuario->agregarusuario($id, $nombre_usuario, $correo, $contrasena);
     }
+    public function validarUsuario($id, $contrasena) {
+        $this->Usuario->validarUsuario($id, $contrasena);
+    }
 }
