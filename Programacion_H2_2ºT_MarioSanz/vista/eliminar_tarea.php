@@ -12,7 +12,7 @@ if ($id_tarea) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controller->eliminartarea($id_tarea);
-    header("Location: controlsesion.php");
+    header("Location: inicio_sesion.php");
     exit();
 }
 ?>

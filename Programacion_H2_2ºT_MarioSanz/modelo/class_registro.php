@@ -67,24 +67,46 @@ class usuario {
 
     public function eliminartarea($id_tarea) {
         $query = "DELETE FROM tareas WHERE id_tarea = ?";
-        $stmt = $this->conexion->conexion->prepare($query);
-        $stmt->bind_param("i", $id_tarea);
-
-        if ($stmt->execute()) {
-            echo "tarea eliminada con éxito.";
-        } else {
-            echo "Error al eliminar tarea: " . $stmt->error;
-        }
-
-        $stmt->close();
-    }
-
-    public function obtenertareaPorId($id_tarea) {
-        $query = "SELECT * FROM tareas WHERE id_tarea = ?";
         $sentencia = $this->conexion->conexion->prepare($query);
         $sentencia->bind_param("i", $id_tarea);
-        $sentencia->execute();
-        $resultado = $sentencia->get_result();
-        return $resultado->fetch_assoc();
+    
+        if ($sentencia->execute()) {
+            echo "Tarea eliminada con éxito.";
+        } else {
+            echo "Error al eliminar tarea: " . $sentencia->error;
+        }
+    
+        $sentencia->close();
     }
+    
+
+    public function obtenertareaPorId($id_tarea) {
+        // Asegúrate de que la consulta esté correcta
+        $query = "SELECT * FROM tareas WHERE id_tarea = ?";
+        
+        // Preparar la consulta
+        $sentencia = $this->conexion->conexion->prepare($query);
+        
+        // Verificar si la preparación fue exitosa
+        if ($sentencia === false) {
+            die('Error en la preparación de la consulta: ' . $this->conexion->conexion->error);
+        }
+    
+        // Vincular los parámetros
+        $sentencia->bind_param("i", $id_tarea);
+    
+        // Ejecutar la consulta
+        $sentencia->execute();
+    
+        // Obtener el resultado
+        $resultado = $sentencia->get_result();
+    
+        // Si hay un resultado, devolverlo
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_assoc(); // Devolver la fila asociada
+        } else {
+            return null; // No se encontró ninguna tarea con ese ID
+        }
+    }
+    
 }

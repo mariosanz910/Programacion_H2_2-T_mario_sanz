@@ -1,5 +1,5 @@
 <?php
-$id_usuario = htmlspecialchars($_GET["id_usuario"]); 
+$id_usuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -63,8 +63,8 @@ $Usuarios = $controller->listartareas();
                 <td><?= $usuario["descripcion"] ?></td>
                 <td><?= $usuario["estado"] ?></td>
                 <td>
-                    <a href="editar_tarea.php?id=<?= $usuario["id_tarea"] ?>" class="btn btn-warning">Actualizar Estado</a>
-                    <a href="eliminar_tarea.php?id=<?= $usuario["id_tarea"] ?>" class="btn btn-danger">Eliminar</a>
+                    <a href="editar_tarea.php?id_tarea=<?= $usuario["id_tarea"] ?>" class="btn btn-warning">Actualizar Estado</a>
+                    <a href="eliminar_tarea.php?id_tarea=<?= $usuario["id_tarea"] ?>" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
