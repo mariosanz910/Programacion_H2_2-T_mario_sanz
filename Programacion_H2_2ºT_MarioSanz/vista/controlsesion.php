@@ -73,7 +73,7 @@ $Usuarios = $controller->listartareas();
 <div class="text-center mt-3">
 <a href="registrar_tarea.php?id_usuario=<?= urlencode($id_usuario) ?>" class="btn btn-success">Agregar tareas</a>
 
-<a href="registrar_tarea.php" class="btn btn-danger">Cerrar sesión</a>
+<a href="inicio_sesion.php" class="btn btn-danger">Cerrar sesión</a>
 
 </div>
 
