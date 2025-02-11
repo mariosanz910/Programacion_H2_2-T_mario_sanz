@@ -1,9 +1,8 @@
 <?php 
 require_once "../controlador/RegistroController.php";
 
-// Inicializa variables
 $id_tarea = $_GET["id_tarea"] ?? null;
-$controller = new UsuariosController(); // Asegúrate de instanciar el controlador correctamente
+$controller = new UsuariosController(); 
 
 if ($id_tarea) {
     // Obtener datos de la tarea a eliminar
