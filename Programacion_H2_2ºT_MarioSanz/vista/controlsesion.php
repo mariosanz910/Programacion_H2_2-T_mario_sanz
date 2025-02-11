@@ -63,7 +63,8 @@ $Usuarios = $controller->listartareas();
                 <td><?= $usuario["descripcion"] ?></td>
                 <td><?= $usuario["estado"] ?></td>
                 <td>
-                    <a href="eliminar_tarea.php?id=<?= $usuario["id_tarea"] ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                    <a href="editar_tarea.php?id=<?= $usuario["id_tarea"] ?>" class="btn btn-warning">Actualizar Estado</a>
+                    <a href="eliminar_tarea.php?id=<?= $usuario["id_tarea"] ?>" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -71,6 +72,7 @@ $Usuarios = $controller->listartareas();
 </table>
 <div class="text-center mt-3">
 <a href="registrar_tarea.php?id_usuario=<?= urlencode($id_usuario) ?>" class="btn btn-success">Agregar tareas</a>
+
 <a href="registrar_tarea.php" class="btn btn-danger">Cerrar sesión</a>
 
 </div>
