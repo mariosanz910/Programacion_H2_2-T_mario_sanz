@@ -19,7 +19,6 @@ CREATE TABLE tareas (
     titulo VARCHAR(100) NOT NULL,
     descripcion TEXT,
     estado ENUM('pendiente', 'completada') DEFAULT 'pendiente',
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
@@ -38,6 +37,8 @@ INSERT INTO tareas (id_usuario, titulo, descripcion, estado) VALUES
 (77777777, 'Aprender SQL', 'Revisar curso de SQL en línea', 'completada');
 
 -- SELECT id FROM usuarios WHERE id = 77777777 AND contrasena = "clave789";
+
+-- INSERT INTO tareas (id_usuario, titulo, descripcion, estado) VALUES (77777777, "Acabar hito", "Terminar", "pendiente");
 
 SELECT * FROM usuarios;
 SELECT * FROM tareas;
