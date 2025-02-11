@@ -108,5 +108,16 @@ class usuario {
             return null; // No se encontró ninguna tarea con ese ID
         }
     }
+
+    public function editarTarea($id_tarea, $estado) {
+        // Actualiza solo el estado de la tarea
+        $query = "UPDATE tareas SET estado = ? WHERE id_tarea = ?";
+        $sentencia = $this->conexion->conexion->prepare($query);
+        $sentencia->bind_param("si", $estado, $id_tarea); // 's' para estado (string), 'i' para id_tarea (integer)
+        
+        return $sentencia->execute(); // Retorna true si la actualización fue exitosa
+    }
+    
+    
     
 }

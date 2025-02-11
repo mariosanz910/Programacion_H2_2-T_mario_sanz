@@ -31,4 +31,8 @@ class UsuariosController {
     public function obtenertareaPorId($id_Usuario) {
         return $this->Usuario->obtenertareaPorId($id_Usuario);
     }
+
+    public function editarTarea($id_tarea, $estado) {
+        $this->Usuario->editarTarea($id_tarea, $estado);
+    }
 }
