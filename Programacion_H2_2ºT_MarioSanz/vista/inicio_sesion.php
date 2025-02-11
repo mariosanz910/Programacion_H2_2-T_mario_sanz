@@ -12,12 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($usuarioValido = 1) {  
         header("Location: controlsesion.php?id_usuario=" . urlencode($id));
         exit();
-    } else {
+    } elseif ($usuarioValido = 0) {
         header("Location: errorsesion.php");
         exit();
     }
 }
-
 ?>
 
 <!DOCTYPE html>

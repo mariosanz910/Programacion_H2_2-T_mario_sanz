@@ -30,6 +30,7 @@
 <body>
 
     <h1>Seleccione una opción</h1>
+    <h2>Inicie sesión por razones de seguridad</h2>
     <a href="../index.php" class="boton">Menú</a>
     <a href="inicio_sesion.php" class="boton">Inicio de sesión</a>
 
